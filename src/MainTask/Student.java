@@ -14,6 +14,87 @@ public class Student {
     private int group;
     private int course;
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public int getYearBirth() {
+        return yearBirth;
+    }
+
+    public void setYearBirth(int yearBirth) {
+        this.yearBirth = yearBirth;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public int getGroup() {
+        return group;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public void setCourse(int course) {
+        this.course = course;
+    }
+
     Student generate(int id){
         Student student=new Student();
         String[][] names={{"Владимир", "Алесандр","Михаил", "Максим", "Артем", "Лев",
@@ -47,7 +128,7 @@ public class Student {
         int room=random.nextInt(100);
         int faculty=random.nextInt(faculties.length);
         student.faculty=faculties[faculty];
-        student.group=100+random.nextInt(400);
+        student.group=(random.nextInt(5)+1)*100+(random.nextInt(5)+1)*10;
         student.course=student.group/100;
         student.adress=streetNames[street]+" д. "+house+" кв. "+room;
         student.phoneNumber="+7"+" "+random.nextInt(1000)+" "+random.nextInt(10000000);
@@ -85,8 +166,28 @@ public class Student {
                 ", course=" + course +
                 '}';
     }
-
-    public static void main(String[] args) {
-
+    public Student() {
+        this.id = 0;
+        this.name = "noname";
+        this.surname = "";
+        this.middleName = "";
+        this.yearBirth = 0;
+        this.adress = "";
+        this.phoneNumber = "";
+        this.faculty = "";
+        this.group = 0;
+        this.course = 0;
+    }
+    public Student(int id, String name, String surname, String middleName, int yearBirth, String adress, String phoneNumber, String faculty, int group, int course) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.middleName = middleName;
+        this.yearBirth = yearBirth;
+        this.adress = adress;
+        this.phoneNumber = phoneNumber;
+        this.faculty = faculty;
+        this.group = group;
+        this.course = course;
     }
 }
